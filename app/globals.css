@@ -24,3 +24,116 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Article Styling for Blog Posts */
+article {
+  color: #1f2937; /* text-gray-800 */
+}
+
+article p {
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.75rem; /* leading-relaxed */
+  margin-bottom: 1.5rem;
+}
+
+article h2 {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700;
+  color: #111827; /* text-gray-900 */
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #dbeafe; /* border-b-2 border-blue-200 */
+}
+
+article h3 {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700;
+  color: #111827; /* text-gray-900 */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+article ul {
+  margin-left: 1.5rem; /* ml-6 */
+  font-size: 1.125rem; /* text-lg */
+  list-style: none;
+  padding: 0;
+}
+
+article ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75rem; /* space-y-3 */
+}
+
+article ul li::before {
+  content: "•";
+  color: #2563eb; /* text-blue-600 */
+  font-weight: 700;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Call-to-action sections with blue background */
+.cta-section {
+  background-color: #eff6ff; /* bg-blue-50 */
+  border-left: 4px solid #2563eb; /* border-l-4 border-blue-600 */
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.cta-section h2 {
+  font-size: 1.5rem; /* text-2xl */
+  color: #1e3a8a; /* text-blue-900 */
+  margin-top: 0;
+  border: none;
+  padding-bottom: 0;
+}
+
+.cta-section p {
+  color: #1e3a8a; /* text-blue-900 */
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+/* Show only on mobile (< 768px), hide on tablet/desktop */
+.mobile-only {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* Show only on tablet/desktop (>= 768px), hide on mobile */
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: flex;
+  }
+}
