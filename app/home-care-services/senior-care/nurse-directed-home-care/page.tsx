@@ -65,7 +65,7 @@ export default function NurseDirectedHomeCare() {
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
-                <span><strong>Chronic disease management</strong> — Conditions like heart failure, COPD, or Parkinson's requiring specific monitoring or interventions</span>
+                <span><strong>Chronic disease management</strong> — Conditions like heart failure, COPD, or Parkinson&apos;s requiring specific monitoring or interventions</span>
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
@@ -107,7 +107,7 @@ export default function NurseDirectedHomeCare() {
                 </li>
                 <li className="flex gap-4">
                   <span className="text-blue-600 font-bold flex-shrink-0">•</span>
-                  <span><strong>Administration assistance</strong> — Helping place medications in the senior's mouth if they cannot self-administer</span>
+                  <span><strong>Administration assistance</strong> — Helping place medications in the senior&apos;s mouth if they cannot self-administer</span>
                 </li>
                 <li className="flex gap-4">
                   <span className="text-blue-600 font-bold flex-shrink-0">•</span>
@@ -216,7 +216,7 @@ export default function NurseDirectedHomeCare() {
             <ul className="space-y-4 my-6">
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
-                <span><strong>Assesses care needs</strong> — Evaluates the senior's condition and determines what care is needed</span>
+                <span><strong>Assesses care needs</strong> — Evaluates the senior&apos;s condition and determines what care is needed</span>
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
@@ -236,11 +236,11 @@ export default function NurseDirectedHomeCare() {
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
-                <span><strong>Communicates with healthcare providers</strong> — Reports on the senior's status and any changes to doctors</span>
+                <span><strong>Communicates with healthcare providers</strong> — Reports on the senior&apos;s status and any changes to doctors</span>
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
-                <span><strong>Adjusts the care plan</strong> — Modifies care as the senior's condition changes</span>
+                <span><strong>Adjusts the care plan</strong> — Modifies care as the senior&apos;s condition changes</span>
               </li>
             </ul>
 
@@ -265,7 +265,7 @@ export default function NurseDirectedHomeCare() {
             <ul className="space-y-4 my-6">
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
-                <span><strong>Understanding the condition</strong> — Learning about the senior's specific health condition and what to watch for</span>
+                <span><strong>Understanding the condition</strong> — Learning about the senior&apos;s specific health condition and what to watch for</span>
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
@@ -322,7 +322,7 @@ export default function NurseDirectedHomeCare() {
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
-                <span><strong>Provider communication</strong> — Regular reporting to the senior's healthcare providers</span>
+                <span><strong>Provider communication</strong> — Regular reporting to the senior&apos;s healthcare providers</span>
               </li>
             </ul>
 
@@ -341,7 +341,7 @@ export default function NurseDirectedHomeCare() {
           </h2>
           <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
             <p>
-              Effective nurse-directed home care requires good coordination between home care providers and the senior's healthcare team. This includes:
+              Effective nurse-directed home care requires good coordination between home care providers and the senior&apos;s healthcare team. This includes:
             </p>
 
             <ul className="space-y-4 my-6">
@@ -351,7 +351,7 @@ export default function NurseDirectedHomeCare() {
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
-                <span><strong>Reporting changes</strong> — Any significant changes in the senior's condition are promptly communicated to healthcare providers</span>
+                <span><strong>Reporting changes</strong> — Any significant changes in the senior&apos;s condition are promptly communicated to healthcare providers</span>
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
@@ -363,12 +363,12 @@ export default function NurseDirectedHomeCare() {
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
-                <span><strong>Understanding goals</strong> — All parties share understanding of the senior's care goals and preferences</span>
+                <span><strong>Understanding goals</strong> — All parties share understanding of the senior&apos;s care goals and preferences</span>
               </li>
             </ul>
 
             <p>
-              This coordination helps ensure that home care supports rather than conflicts with the senior's overall healthcare plan.
+              This coordination helps ensure that home care supports rather than conflicts with the senior&apos;s overall healthcare plan.
             </p>
           </div>
         </div>
@@ -404,7 +404,7 @@ export default function NurseDirectedHomeCare() {
               </li>
               <li className="flex gap-4">
                 <span className="text-blue-600 font-bold flex-shrink-0">•</span>
-                <span><strong>Continuity of care</strong> — Consistent caregivers understand the senior's specific needs and preferences</span>
+                <span><strong>Continuity of care</strong> — Consistent caregivers understand the senior&apos;s specific needs and preferences</span>
               </li>
             </ul>
 
