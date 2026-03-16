@@ -2,28 +2,23 @@ export default function EmployeePortal() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-blue-50 to-white">
+      <section className="pt-16 pb-8 sm:pt-20 sm:pb-8 bg-gradient-to-br from-blue-50 to-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Home Instead Employee Portal
           </h1>
-          <p className="text-xl text-gray-700 leading-relaxed">
-            Access employee resources, benefits, schedules, and important documents through the Home Instead employee portal.
-          </p>
         </div>
       </section>
 
       {/* Employee File Section */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-8 sm:py-12 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12">
-            Employee File
-          </h2>
 
-          <div className="space-y-12">
+
+          <div className="grid md:grid-cols-3 gap-8">
             {/* HR Portal */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">HR Portal</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Employee File:</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex gap-3">
                   <span className="text-blue-600 font-bold">•</span>
@@ -38,7 +33,7 @@ export default function EmployeePortal() {
 
             {/* Smart Forms */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Smart Forms</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Smart Forms:</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex gap-3">
                   <span className="text-blue-600 font-bold">•</span>
@@ -61,7 +56,7 @@ export default function EmployeePortal() {
 
             {/* Schedule & Pay Roll */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Schedule & Pay Roll</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Schedule & Pay Roll:</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex gap-3">
                   <span className="text-blue-600 font-bold">•</span>
