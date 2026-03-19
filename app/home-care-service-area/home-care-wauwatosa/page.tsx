@@ -77,7 +77,7 @@ export default function WauwatosaPage() {
                     </li>
                     <li className="flex gap-4">
                       <span className="text-blue-600 font-bold flex-shrink-0">•</span>
-                      <span><strong>Maintaining independence</strong> — Making one&apos;s own decisions about daily life and routines</span>
+                      <span><strong>Maintaining independence</strong> — Making one&#39;s own decisions about daily life and routines</span>
                     </li>
                     <li className="flex gap-4">
                       <span className="text-blue-600 font-bold flex-shrink-0">•</span>
@@ -136,7 +136,7 @@ export default function WauwatosaPage() {
                       <div>
                         <h3 className="text-lg font-bold text-gray-900 mb-2">Specialized Care</h3>
                         <p className="text-gray-700">
-                          Care for seniors with Alzheimer&apos;s disease, dementia, Parkinson&apos;s disease, diabetes, arthritis, and other chronic conditions. Caregivers receive specialized training in managing these conditions.
+                          Care for seniors with Alzheimer&#39;s disease, dementia, Parkinson&#39;s disease, diabetes, arthritis, and other chronic conditions. Caregivers receive specialized training in managing these conditions.
                         </p>
                       </div>
                     </div>
@@ -233,7 +233,7 @@ export default function WauwatosaPage() {
                       <span className="text-2xl">💡</span> Did You Know?
                     </h3>
                     <p className="text-gray-700 text-sm">
-                      Staying in one&apos;s home during aging is associated with better mental health outcomes and higher life satisfaction compared to facility-based care arrangements.
+                      Staying in one&#39;s home during aging is associated with better mental health outcomes and higher life satisfaction compared to facility-based care arrangements.
                     </p>
                   </div>
 
@@ -242,7 +242,7 @@ export default function WauwatosaPage() {
                       <span className="text-2xl">⚠️</span> Important Consideration
                     </h3>
                     <p className="text-gray-700 text-sm">
-                      Not all home care providers are the same. It&apos;s important to ask about caregiver training, background checks, insurance, and how the provider handles concerns or emergencies.
+                      Not all home care providers are the same. It&#39;s important to ask about caregiver training, background checks, insurance, and how the provider handles concerns or emergencies.
                     </p>
                   </div>
 
@@ -251,7 +251,7 @@ export default function WauwatosaPage() {
                       <span className="text-2xl">📋</span> Action Items
                     </h3>
                     <ul className="text-gray-700 text-sm space-y-2">
-                      <li>1. Assess your loved one&apos;s current care needs</li>
+                      <li>1. Assess your loved one&#39;s current care needs</li>
                       <li>2. Research providers in the Wauwatosa area</li>
                       <li>3. Contact providers for consultations</li>
                       <li>4. Ask references and verify credentials</li>
@@ -263,7 +263,7 @@ export default function WauwatosaPage() {
                       <span className="text-2xl">🎯</span> Did You Know?
                     </h3>
                     <p className="text-gray-700 text-sm">
-                      Many home care services can be adjusted as needs change over time, making it easy to increase or decrease hours based on your loved one&apos;s evolving situation.
+                      Many home care services can be adjusted as needs change over time, making it easy to increase or decrease hours based on your loved one&#39;s evolving situation.
                     </p>
                   </div>
                 </div>

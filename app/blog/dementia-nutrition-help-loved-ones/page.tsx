@@ -6,13 +6,9 @@ export default function DementiaNutritionPost() {
       {/* Hero Section */}
       <section className="py-12 sm:py-16 bg-gradient-to-br from-blue-50 to-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <Link href="/blog" className="inline-block text-blue-600 hover:text-blue-700 mb-4">
-            ← Back to Blog
-          </Link>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             How to Help Loved Ones with Dementia Get the Nutrition They Need
           </h1>
-          <p className="text-gray-600">September 2025</p>
         </div>
       </section>
 
@@ -106,27 +102,122 @@ export default function DementiaNutritionPost() {
             People with memory problems may not remember to eat or may ask again for a meal, having forgotten they already ate. Keep healthy snacks available, rather than telling them that they just ate.
           </p>
 
-          <h2>Alzheimer's and Dementia Care by Home Instead</h2>
-
-          <p>
-            Home Instead of Milwaukee is here to provide compassionate, high-quality memory care right in your loved one's home.
-          </p>
-
-          <p>
-            Our Alzheimer's and dementia CAREGivers participate in our unique and critically acclaimed training program called CARE: Changing Aging through Research and Education. As pioneers in this field, Home Instead Senior Care developed the highest quality dementia caregiver training program available. As a result, we have helped change how people live with Alzheimer's and other dementias.
-          </p>
         </div>
       </article>
 
-      {/* Navigation */}
-      <section className="py-8 bg-gray-50 border-t border-gray-200">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <Link href="/blog" className="inline-block text-blue-600 hover:text-blue-700 font-medium">
-            ← Back to Blog
-          </Link>
+
+
+      {/* Local Resources for Seniors and Families */}
+      <section className="py-16 sm:py-24 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Local Resources for Seniors and Families
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Milwaukee and Wisconsin offer numerous resources to support aging adults and their families. Here are some valuable organizations to explore.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white p-8 rounded-xl border border-blue-200 hover:shadow-lg transition">
+              <div className="flex gap-4 mb-4">
+                <div className="text-3xl">🏛️</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">County Support</h3>
+                  <p className="text-sm text-gray-600">Milwaukee County Services</p>
+                </div>
+              </div>
+              <p className="text-gray-700 mb-6">
+                Milwaukee County&#39;s Department of Health and Human Services provides comprehensive programs, financial assistance, and resources for older adults.
+              </p>
+              <a href="https://county.milwaukee.gov/EN/DHHS/Older-Adults-Services" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 font-semibold">
+                Learn about county programs →
+              </a>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl border border-green-200 hover:shadow-lg transition">
+              <div className="flex gap-4 mb-4">
+                <div className="text-3xl">🏠</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Alternative Options</h3>
+                  <p className="text-sm text-gray-600">Assisted Living Services</p>
+                </div>
+              </div>
+              <p className="text-gray-700 mb-6">
+                Vestas Senior Network provides information about assisted living facilities and senior housing options throughout the Milwaukee area.
+              </p>
+              <a href="https://www.vestaseniornetwork.com/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 font-semibold">
+                Explore assisted living →
+              </a>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl border border-purple-200 hover:shadow-lg transition">
+              <div className="flex gap-4 mb-4">
+                <div className="text-3xl">❤️</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">End-of-Life Care</h3>
+                  <p className="text-sm text-gray-600">Hospice Services</p>
+                </div>
+              </div>
+              <p className="text-gray-700 mb-6">
+                Agrace Hospice provides information about end-of-life care and family support services in the Wauwatosa and surrounding areas.
+              </p>
+              <a href="https://www.agrace.org/locations/wauwatosa/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-700 font-semibold">
+                Learn about hospice care →
+              </a>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl border border-amber-200 hover:shadow-lg transition">
+              <div className="flex gap-4 mb-4">
+                <div className="text-3xl">🏥</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Home Care Information</h3>
+                  <p className="text-sm text-gray-600">Local Providers</p>
+                </div>
+              </div>
+              <p className="text-gray-700 mb-6">
+                Home Instead Senior Care is one of several local providers offering home care services in the Milwaukee North area.
+              </p>
+              <a href="https://www.homeinstead.com/home-care/usa/wi/milwaukee-north/315/" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700 font-semibold">
+                Explore Home Instead →
+              </a>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl border border-teal-200 hover:shadow-lg transition">
+              <div className="flex gap-4 mb-4">
+                <div className="text-3xl">🔧</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Adaptive Equipment &amp; Home Modification</h3>
+                  <p className="text-sm text-gray-600">Home Safety Solutions</p>
+                </div>
+              </div>
+              <p className="text-gray-700 mb-6">
+                BILD provides adaptive equipment and home modification services to help seniors live safely and independently in their own homes.
+              </p>
+              <a href="https://www.bildnow.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 font-semibold">
+                Explore adaptive equipment →
+              </a>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl border border-indigo-200 hover:shadow-lg transition">
+              <div className="flex gap-4 mb-4">
+                <div className="text-3xl">⚖️</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Elderlaw Resources</h3>
+                  <p className="text-sm text-gray-600">Legal Services for Seniors</p>
+                </div>
+              </div>
+              <p className="text-gray-700 mb-6">
+                Elder law attorneys can help families navigate legal matters related to aging, including estate planning, guardianship, and long-term care planning.
+              </p>
+              <a href="https://lawmwc.com/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 font-semibold">
+                Explore elderlaw resources →
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
   );
 }
-

@@ -18,9 +18,9 @@ export default function Blog() {
     },
     {
       slug: 'preparing-home-alzheimers-holiday-season',
-      title: 'Preparing the Home for a Family Member with Alzheimer&apos;s this Holiday Season',
+      title: "Preparing the Home for a Family Member with Alzheimer's this Holiday Season",
       image: '/Preparing-the-Home-for-a-Family-Member-with-Alzheimers-this-Holiday-Season.png',
-      excerpt: 'Creating a safe and comfortable home environment for loved ones with Alzheimer&apos;s requires thoughtful preparation. Learn practical tips.',
+      excerpt: "Creating a safe and comfortable home environment for loved ones with Alzheimer's requires thoughtful preparation. Learn practical tips.",
       date: 'October 2023'
     },
     {
@@ -46,7 +46,7 @@ export default function Blog() {
     },
     {
       slug: 'caregivers-guide-dementia-behaviors',
-      title: 'A Caregiver&apos;s Guide to Dementia Behaviors',
+      title: "A Caregiver's Guide to Dementia Behaviors",
       image: '/A-Caregivers-Guide-to-Dementia-Behaviors-.png',
       excerpt: 'Understanding common dementia behaviors like wandering, agitation, and repetition can help you respond with compassion and patience.',
       date: 'August 2025'
@@ -104,7 +104,7 @@ export default function Blog() {
       slug: 'is-loved-one-ready-memory-care',
       title: 'Is Your Loved One Ready for Memory Care?',
       image: '/Is-Your-Loved-One-Ready-for-Memory-Care-1.png',
-      excerpt: 'Recognizing when your loved one needs specialized memory care is crucial. Discover five key signs that indicate it&apos;s time for professional support.',
+      excerpt: "Recognizing when your loved one needs specialized memory care is crucial. Discover five key signs that indicate it's time for professional support.",
       date: 'December 2024'
     },
     {
@@ -132,7 +132,7 @@ export default function Blog() {
       slug: 'is-home-care-right-fit',
       title: 'Is Home Care the Right Fit for my Family Member?',
       image: '/Is-Home-Care-the-Right-Fit-for-my-Family-Member.png',
-      excerpt: 'Considering home care for your loved one? Explore three important questions to help you determine if it&apos;s the right choice.',
+      excerpt: "Considering home care for your loved one? Explore three important questions to help you determine if it's the right choice.",
       date: 'August 2024'
     },
     {
@@ -151,7 +151,7 @@ export default function Blog() {
     },
     {
       slug: 'senior-caring-spouse-ill',
-      title: 'Tips for Seniors Caring for a Spouse Who&apos;s Ill',
+      title: "Tips for Seniors Caring for a Spouse Who's Ill",
       image: '/Tips-for-Seniors-Caring-for-a-Spouse-Whos-Ill.png',
       excerpt: 'Caring for an ill spouse brings unique challenges. Learn five tips to help senior caregivers manage the physical and emotional demands.',
       date: 'May 2024'
@@ -225,7 +225,7 @@ export default function Blog() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <p className="text-sm text-gray-500 mb-2">{post.date}</p>
+
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
                       {post.title}
                     </h3>
