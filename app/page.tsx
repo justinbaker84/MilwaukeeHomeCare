@@ -310,6 +310,38 @@ export default function Home() {
                 Explore Home Instead →
               </a>
             </div>
+
+            <div className="bg-white p-8 rounded-xl border border-teal-200 hover:shadow-lg transition">
+              <div className="flex gap-4 mb-4">
+                <div className="text-3xl">🔧</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Adaptive Equipment & Home Modification</h3>
+                  <p className="text-sm text-gray-600">Home Safety Solutions</p>
+                </div>
+              </div>
+              <p className="text-gray-700 mb-6">
+                BILD provides adaptive equipment and home modification services to help seniors live safely and independently in their own homes.
+              </p>
+              <a href="https://www.bildnow.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 font-semibold">
+                Explore adaptive equipment →
+              </a>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl border border-indigo-200 hover:shadow-lg transition">
+              <div className="flex gap-4 mb-4">
+                <div className="text-3xl">⚖️</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Elderlaw Resources</h3>
+                  <p className="text-sm text-gray-600">Legal Services for Seniors</p>
+                </div>
+              </div>
+              <p className="text-gray-700 mb-6">
+                Elder law attorneys can help families navigate legal matters related to aging, including estate planning, guardianship, and long-term care planning.
+              </p>
+              <a href="https://lawmwc.com/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 font-semibold">
+                Explore elderlaw resources →
+              </a>
+            </div>
           </div>
         </div>
       </section>
