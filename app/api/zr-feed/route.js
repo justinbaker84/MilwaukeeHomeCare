@@ -60,56 +60,43 @@ export async function GET() {
       return stage === "open";
     });
 
-    // --- Step 3: Build the XML ---
-    const jobXml = activeJobs
+    // --- Step 3: Fetch full job descriptions in parallel ---
+    // The jobs list endpoint doesn't include the full description ("Job Listing").
+    // We call api/job/JOB_SERIAL for each active job to get it.
+    const jobsWithDescriptions = await Promise.all(
+      activeJobs.map(async (job) => {
+        const description = await fetchJobDescription(domain, token, job["Job Serial"]);
+        return { ...job, description };
+      })
+    );
+
+    // --- Step 4: Build the XML ---
+    const jobXml = jobsWithDescriptions
       .map((job) => {
         // Parse location — ApplicantStack returns it as "City, ST"
         const locationParts = (job.Location || "").split(",");
         const city = (locationParts[0] || "").trim();
         const state = (locationParts[1] || "").trim();
 
-        // Escape any special characters that would break XML
         const safeTitle = escapeXml(job["Job Name"] || "");
-        const safeCompany = escapeXml(job["Department"] || "");
         const safeCity = escapeXml(city);
         const safeState = escapeXml(state);
 
         return `
     <job>
-      <!-- The referencenumber is the ApplicantStack Job Serial.
-           ZipRecruiter sends this back when someone applies, so we
-           know which job to attach the candidate to. -->
       <referencenumber>${escapeXml(job["Job Serial"] || "")}</referencenumber>
       <title>${safeTitle}</title>
-
-      <!-- Description: ApplicantStack's basic job list doesn't include
-           the full description. You have two options:
-           Option A (simple): Use the job name as a placeholder — then
-             edit the description directly in ZipRecruiter after posting.
-           Option B (better): Make an extra API call per job to get the
-             full listing. See the comment in the code below. -->
-      <description><![CDATA[${safeTitle} - ${safeCompany}
-
-Please see the full job description on our website.
-
-OPTION B: To include full descriptions automatically, you would replace
-this placeholder with an extra API call:
-  fetch https://DOMAIN.applicantstack.com/api/job/JOB_SERIAL
-  and use the "Job Listing" field from that response.
-Note: This adds one API call per job and may slow the feed for large job counts.
-]]></description>
-
+      <description><![CDATA[${job.description || safeTitle}]]></description>
       <country>US</country>
       <city>${safeCity}</city>
       <state>${safeState}</state>
-      <company>${safeCompany}</company>
+      <company>Home Instead</company>
       <date>${escapeXml(job["Create Date"] || "")}</date>
 
       <!-- No <url> or <email> tag here on purpose!
            Omitting both means candidates use ZipRecruiter Apply,
            and ZipRecruiter sends their info to our webhook. -->
 
-      <!-- Optional fields for better visibility on ZipRecruiter -->
       ${job["Job Type"] ? `<jobtype>${escapeXml(job["Job Type"])}</jobtype>` : ""}
       ${job["Salary Range"] ? buildCompensationXml(job["Salary Range"]) : ""}
     </job>`;
@@ -118,7 +105,7 @@ Note: This adds one API call per job and may slow the feed for large job counts.
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <source>
-  <publisher>YourCompanyName</publisher>
+  <publisher>Home Instead</publisher>
   <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
   ${jobXml}
 </source>`;
@@ -135,6 +122,34 @@ Note: This adds one API call per job and may slow the feed for large job counts.
   } catch (error) {
     console.error("Error generating ZipRecruiter feed:", error);
     return new Response("Error generating feed", { status: 500 });
+  }
+}
+
+// --- Helper: Fetch the full job description from ApplicantStack ---
+// The jobs list endpoint omits "Job Listing". This calls api/job/JOB_SERIAL
+// to get the full record and returns the "Job Listing" HTML field.
+async function fetchJobDescription(domain, token, jobSerial) {
+  try {
+    const response = await fetch(
+      `https://${domain}.applicantstack.com/api/job/${jobSerial}`,
+      {
+        headers: {
+          "Token": token,
+          "Publisher": "ZipRecruiter Feed",
+        },
+      }
+    );
+
+    if (!response.ok) {
+      console.error(`Failed to fetch description for job ${jobSerial}: ${response.status}`);
+      return "";
+    }
+
+    const data = await response.json();
+    return data["Job Listing"] || "";
+  } catch (error) {
+    console.error(`Error fetching description for job ${jobSerial}:`, error);
+    return "";
   }
 }
 
