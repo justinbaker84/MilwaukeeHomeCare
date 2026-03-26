@@ -254,7 +254,7 @@ export default function Blog() {
               These articles provide practical information and guidance for families navigating aging and caregiving. Topics include caregiver support, self-care strategies, creating safe home environments, and understanding various aspects of aging and care.
             </p>
             <p>
-              While these resources provide general information, they're not a substitute for professional advice. Always consult with healthcare providers, elder law attorneys, or other specialists for guidance specific to your situation.
+              While these resources provide general information, they&apos;re not a substitute for professional advice. Always consult with healthcare providers, elder law attorneys, or other specialists for guidance specific to your situation.
             </p>
           </div>
         </div>
