@@ -164,32 +164,43 @@ function escapeXml(str) {
 }
 
 // --- Helper: Try to parse ApplicantStack's salary range into ZipRecruiter's format ---
-// ApplicantStack stores salary as a string like "40k-60k" or "$40,000 - $60,000"
-// ZipRecruiter wants separate min/max numbers and an interval
+// Handles formats like: "40k-60k", "$40,000-$60,000", "15-20/hr", "640-720/week"
+// ZipRecruiter accepts intervals: Annually, Monthly, Weekly, Daily, Hourly
 function buildCompensationXml(salaryRange) {
   try {
-    // Remove $ and commas, lowercase
     const cleaned = salaryRange.replace(/[$,]/g, "").toLowerCase();
 
-    // Try to find two numbers separated by a dash
-    const match = cleaned.match(/([\d.]+)k?\s*[-–]\s*([\d.]+)k?/);
+    // Detect the pay interval from keywords in the string
+    let interval = "Annually";
+    if (/hour|\/hr\b/.test(cleaned)) {
+      interval = "Hourly";
+    } else if (/week/.test(cleaned)) {
+      interval = "Weekly";
+    } else if (/day|\/day\b/.test(cleaned)) {
+      interval = "Daily";
+    } else if (/month/.test(cleaned)) {
+      interval = "Monthly";
+    }
+
+    // Extract the two numbers — also capture whether each number has a trailing "k"
+    // e.g. "40k-60k" → min=40 with k, max=60 with k
+    //      "640-720/week" → min=640 no k, max=720 no k
+    const match = cleaned.match(/([\d.]+)(k?)\s*[-–]\s*([\d.]+)(k?)/);
     if (!match) return "";
 
     let min = parseFloat(match[1]);
-    let max = parseFloat(match[2]);
+    let max = parseFloat(match[3]);
 
-    // Handle "40k" style shorthand
-    if (cleaned.includes("k")) {
-      if (min < 1000) min = min * 1000;
-      if (max < 1000) max = max * 1000;
-    }
+    // Only multiply by 1000 if "k" is directly attached to that number
+    if (match[2] === "k" && min < 1000) min = min * 1000;
+    if (match[4] === "k" && max < 1000) max = max * 1000;
 
     return `
       <compensation_min>${min.toFixed(2)}</compensation_min>
       <compensation_max>${max.toFixed(2)}</compensation_max>
-      <compensation_interval>Annually</compensation_interval>
+      <compensation_interval>${interval}</compensation_interval>
       <compensation_currency>USD</compensation_currency>`;
   } catch {
-    return ""; // If parsing fails, just omit compensation rather than break the feed
+    return ""; // If parsing fails, omit compensation rather than break the feed
   }
 }
