@@ -127,7 +127,7 @@ export async function GET() {
 
 // --- Helper: Fetch the full job description from ApplicantStack ---
 // The jobs list endpoint omits "Job Listing". This calls api/job/JOB_SERIAL
-// to get the full record and returns the "Job Listing" HTML field.
+// to get the full record and returns the "Job Listing" field formatted as HTML.
 async function fetchJobDescription(domain, token, jobSerial) {
   try {
     const response = await fetch(
@@ -146,11 +146,30 @@ async function fetchJobDescription(domain, token, jobSerial) {
     }
 
     const data = await response.json();
-    return data["Job Listing"] || "";
+    const raw = data["Job Listing"] || "";
+
+    // If ApplicantStack already returned HTML (contains a tag), use it as-is.
+    // Otherwise convert plain text to HTML so ZipRecruiter preserves the formatting.
+    if (/<[a-z][\s\S]*>/i.test(raw)) {
+      return raw;
+    }
+
+    return plainTextToHtml(raw);
   } catch (error) {
     console.error(`Error fetching description for job ${jobSerial}:`, error);
     return "";
   }
+}
+
+// --- Helper: Convert plain text to simple HTML ---
+// Splits on blank lines to make <p> paragraphs, and converts single newlines to <br>.
+function plainTextToHtml(text) {
+  if (!text) return "";
+  return text
+    .split(/\n\s*\n/)
+    .map((para) => `<p>${para.trim().replace(/\n/g, "<br>")}</p>`)
+    .filter((para) => para !== "<p></p>")
+    .join("\n");
 }
 
 // --- Helper: Escape characters that break XML ---
