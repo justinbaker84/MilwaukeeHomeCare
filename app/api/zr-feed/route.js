@@ -56,8 +56,8 @@ export async function GET() {
     // Adjust this filter based on what your "active" stage is called in ApplicantStack
     // Common values: "Open", "Active", "Approved" — check your ApplicantStack settings
     const activeJobs = allJobs.filter((job) => {
-      const status = (job.Status || "").toLowerCase();
-      return status === "open";
+      const stage = (job.Stage || "").toLowerCase();
+      return !["closed", "filled", "on hold", "cancelled", "archived"].includes(stage);
     });
 
     // --- Step 3: Build the XML ---
