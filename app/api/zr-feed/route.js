@@ -57,7 +57,7 @@ export async function GET() {
     // Common values: "Open", "Active", "Approved" — check your ApplicantStack settings
     const activeJobs = allJobs.filter((job) => {
       const stage = (job.Stage || "").toLowerCase();
-      return !["closed", "filled", "on hold", "cancelled", "archived"].includes(stage);
+      return stage === "open";
     });
 
     // --- Step 3: Build the XML ---
