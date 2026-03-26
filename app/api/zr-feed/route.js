@@ -164,7 +164,7 @@ function escapeXml(str) {
 }
 
 // --- Helper: Try to parse ApplicantStack's salary range into ZipRecruiter's format ---
-// Handles formats like: "40k-60k", "$40,000-$60,000", "15-20/hr", "640-720/week"
+// Handles formats like: "$15-$20/hr", "640-720/week", "$40,000-$60,000"
 // ZipRecruiter accepts intervals: Annually, Monthly, Weekly, Daily, Hourly
 function buildCompensationXml(salaryRange) {
   try {
@@ -182,18 +182,12 @@ function buildCompensationXml(salaryRange) {
       interval = "Monthly";
     }
 
-    // Extract the two numbers — also capture whether each number has a trailing "k"
-    // e.g. "40k-60k" → min=40 with k, max=60 with k
-    //      "640-720/week" → min=640 no k, max=720 no k
-    const match = cleaned.match(/([\d.]+)(k?)\s*[-–]\s*([\d.]+)(k?)/);
+    // Extract the two numbers separated by a dash
+    const match = cleaned.match(/([\d.]+)\s*[-–]\s*([\d.]+)/);
     if (!match) return "";
 
-    let min = parseFloat(match[1]);
-    let max = parseFloat(match[3]);
-
-    // Only multiply by 1000 if "k" is directly attached to that number
-    if (match[2] === "k" && min < 1000) min = min * 1000;
-    if (match[4] === "k" && max < 1000) max = max * 1000;
+    const min = parseFloat(match[1]);
+    const max = parseFloat(match[2]);
 
     return `
       <compensation_min>${min.toFixed(2)}</compensation_min>
