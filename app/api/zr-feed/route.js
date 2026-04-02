@@ -66,12 +66,16 @@ export async function GET(request) {
       });
     }
 
-    // --- Step 2: Filter to only open/active jobs ---
-    // Adjust this filter based on what your "active" stage is called in ApplicantStack
-    // Common values: "Open", "Active", "Approved" — check your ApplicantStack settings
+    // --- Step 2: Filter to only open/active jobs, excluding internal postings ---
+    const excludedTitles = [
+      "mycnajobs career fair",
+      "mycnajobs marketplace",
+    ];
+
     const activeJobs = allJobs.filter((job) => {
       const stage = (job.Stage || "").toLowerCase();
-      return stage === "open";
+      const title = (job["Job Name"] || "").toLowerCase();
+      return stage === "open" && !excludedTitles.includes(title);
     });
 
     // --- Step 3: Fetch full job descriptions in parallel ---
