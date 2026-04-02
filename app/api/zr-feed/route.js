@@ -6,7 +6,7 @@
 //
 // Give ZipRecruiter this URL:  https://yourdomain.com/api/zr-feed
 
-export async function GET() {
+export async function GET(request) {
   try {
     const token = process.env.APPLICANTSTACK_TOKEN;
     const domain = process.env.APPLICANTSTACK_DOMAIN;
@@ -50,6 +50,20 @@ export async function GET() {
       }
 
       currentPage++;
+    }
+
+    // --- Debug mode: visit /api/zr-feed?debug=true to see all jobs and their Stage values ---
+    const { searchParams } = new URL(request.url);
+    if (searchParams.get("debug") === "true") {
+      const debugInfo = allJobs.map((job) => ({
+        serial: job["Job Serial"],
+        name: job["Job Name"],
+        stage: job["Stage"],
+      }));
+      return new Response(JSON.stringify(debugInfo, null, 2), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
     // --- Step 2: Filter to only open/active jobs ---

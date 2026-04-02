@@ -67,7 +67,7 @@ export async function POST(request) {
       "First Name": body.first_name || "",
       "Last Name": body.last_name || "",
       "Email": body.email || "",
-      "Phone": formatPhone(body.phone || ""),
+      "Primary Phone (Cell Phone)": formatPhone(body.phone || ""),
       "Source": "ZipRecruiter",
     };
 
